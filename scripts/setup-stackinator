@@ -26,7 +26,8 @@ log "finished stackinator installation"
 export PATH="${tool_path}/bin:$PATH"
 
 cluster_path=`mktemp -d`
-cluster_repo=https://github.com/eth-cscs/alps-cluster-config
+# cluster_repo=https://github.com/eth-cscs/alps-cluster-config
+cluster_repo=https://github.com/jgphpc/alps-cluster-config
 
 log "cloning cluster config from ${cluster_repo}"
-git clone --quiet "${cluster_repo}" "${cluster_path}" || err "unable to clone cluster-config git repository"
+git clone -b santis "${cluster_repo}" "${cluster_path}" || err "unable to clone cluster-config git repository"

@@ -1,0 +1,14 @@
+gcc-env:
+  compiler:
+      - toolchain: gcc
+        spec: gcc@12
+  mpi:
+      spec: cray-mpich
+      gpu: Null
+  unify: true
+  specs:
+  - openblas
+  variants:
+  - +mpi
+  views:
+    default:

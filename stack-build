@@ -115,13 +115,14 @@ else
     rm -f cache.yaml
     cache_flags=""
 fi
+cache_flags="--cache $SCRATCH/.keys/cache-config.yaml"
 
 ##
 # Download and configure oras
 ##
 
 log "configuring oras"
-source ${ci_path}/scripts/setup-oras
+## source ${ci_path}/scripts/setup-oras
 
 
 ##
