@@ -1,0 +1,21 @@
+scorep:
+  compiler:
+  - toolchain: gcc
+    spec: gcc@12
+  unify: when_possible
+#del   mpi:
+#del     spec: cray-mpich@9.0.0
+#del     gpu: cuda
+  specs:
+  - hello@1.0 +cuda
+  - hello@1.0 -cuda
+  # uenv build hello/1.0/gh200 hello/1.0@santis%gh200
+  views:
+    default:
+      link: roots
+    gpu:
+      link: roots
+      exclude: ["hello-cuda"]
+    cpu:
+      link: roots
+      exclude: ["hello+cuda"]
